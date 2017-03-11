@@ -12,3 +12,4 @@ script:
 after_success:
   - dotnet publish -o published
   - ls published
+  - docker build -t rushi216/aspnetcore-docker .
