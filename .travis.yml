@@ -7,3 +7,5 @@ install:
   - dotnet restore
 script:
   - dotnet build
+after_success:
+  - dotnet publish -o published
