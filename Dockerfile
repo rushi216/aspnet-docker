@@ -1,10 +1,4 @@
-FROM microsoft/dotnet
-COPY . ./app
+FROM microsoft/aspnetcore
 WORKDIR /app
-
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-
-ENV ASPNETCORE_URLS http://+:80
-
-ENTRYPOINT ["dotnet", "run"]
+COPY published ./
+ENTRYPOINT ["dotnet", "dotnet.dll"]
