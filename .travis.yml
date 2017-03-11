@@ -13,3 +13,5 @@ after_success:
   - dotnet publish -o published
   - ls published
   - docker build -t rushi216/aspnetcore-docker .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push rushi216/aspnetcore-docker
